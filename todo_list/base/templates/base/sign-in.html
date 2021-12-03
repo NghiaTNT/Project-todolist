@@ -1,0 +1,59 @@
+{% load static %}
+{% load crispy_forms_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,900;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'sign-in.css' %}">
+    <title>Sign-in</title>
+</head>
+<body>
+    <!--BEGIN SIGN IN -->
+    <div class="signin">
+        
+        <div class="introduce">
+            <h2 class="title">Get more done with Nexus</h2>
+            <p class="description">Vestibulum interdum vehicula enim, eu pulvinar ipsum imperdiet quis. Nulla sed eleifend nibh.</p>
+        </div>
+        <form class="signin__form" id="form-1" method="POST">
+            <h2 class="title-form">Welcome</h2>
+            <span class="sub-title-form">Hello there, sign in to continue</span>
+            {% csrf_token %}
+            <!--<ul class="form-group">
+                <input id="name" name="name" type="text" placeholder="Username" class="form-control">
+                <label class="label label-infor">form.username.label</label>      
+                <li id="name" name="name" type="text" placeholder="Username" class="form-control">form.username</li>
+                                
+        
+                
+                <label class="label label-infor">form.password.label</label>            
+                <li id="password" class="form-control">form.password</li>
+            </ul>-->
+            
+            {{form.username|as_crispy_field}}
+            
+            {{form.password|as_crispy_field}}
+
+            <div class="forgot-password"> <a href="#">Forgot password?</a> </div>
+            <button class="btn-sign" type="submit" value="Login">Sign in</button>
+            <p class="log-in-with">Or log in with</p>
+            <div class="logo-signin">
+                <a href="#"><img src="{% static 'facebook_icon.png' %}" alt="Icon Facebook"></a>
+                <a href="#"><img src="{% static 'google_icon.png' %}" alt="Icon Google"></a>
+            </div>
+                <div class="sign-footer">
+                <span>Don’t have an account?</span>
+                <a href="{% url 'register' %}">Sign up</a>
+            </div>          
+        </form>
+    </div>
+    <!-- END SIGN IN -->
+</body>
+</html>

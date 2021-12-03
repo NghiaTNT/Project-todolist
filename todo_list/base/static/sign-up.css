@@ -1,0 +1,213 @@
+/* Reset CSS */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* COMMON */
+
+.introduce {
+    flex: 1;
+    background-image: linear-gradient(139deg, #ff6c99 0%, #c93cbc 101%);
+    padding: 50px;
+}
+
+.introduce .title {
+    font-size: 60px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.introduce .description {
+    font-size: 40px;
+    color: #fff;
+}
+
+.title-form {
+    display: block;
+    font-size: 60px;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-weight: 900;
+    height: 80px;
+    text-transform: uppercase;
+}
+
+.sub-title-form {
+    display: block;
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.form-group.invalid .form-control {
+    border-color: #f33a58;
+    background-color: #fff;
+}
+  
+.form-group.invalid .form-message {
+    color: #f33a58;
+}
+
+.form-message {
+    display: block;
+    margin-left: 120px;
+    font-size: 16px;
+    opacity: 0.7;
+    margin-bottom: 20px;
+    color: red;
+}
+
+.form-control {
+    display: block;
+    font-size: 24px;
+    border: 2px solid rgba(229, 229, 229, 0.7);
+    /* border: none; */
+    border-radius: 4.7px;
+    background-color: rgba(229, 229, 229, 0.7);
+    margin-bottom: 5px;
+    margin-left: 120px;
+    width: 460px;
+    height: 48px;
+    padding-left: 14px;
+    opacity: 0.7;
+}
+
+.form-control:hover {
+    border: 2px solid #1dbfaf;
+    background-color: #fff;
+  }
+
+.btn-sign {
+    display: inline-block;
+    font-size: 24px;
+    color: #fff;    
+    border-radius: 15px;
+    border: none;
+    background-image: linear-gradient(to right, rgba(201, 60, 188, 0.85) 0%, #ff6c99 100%);
+    margin-left: 200px;
+    width: 280px;
+    height: 60px;
+    font-weight: 700;
+    transition: all .3s linear;
+}
+
+.btn-sign:hover {
+    cursor: pointer;
+    opacity: 0.8;
+    transform: scale(1.1)
+}
+
+.sign-footer {
+    font-size: 18px;
+    margin-left: 214px;
+}
+
+.sign-footer a {
+    font-weight: 600;
+    text-decoration: none;
+    color: rgba(201, 60, 188, 0.85);
+}
+
+.sign-footer a:hover {
+    opacity: 0.7;
+}
+
+
+.signin {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+/* SIGN IN */
+
+.signin__form {
+    flex: 1;
+    padding-left: 20px;
+    background-color: #fff;
+    padding-top: 50px;
+    margin-right: 80px;
+}
+
+
+.signin__form .forgot-password {
+    font-size: 18px;
+    margin-left: 120px;
+}
+
+.signin__form .forgot-password:hover {
+    opacity: 0.7;
+}
+
+.signin__form .forgot-password a {
+    text-decoration: none;
+    display: block;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+
+.signin__form .log-in-with {
+    margin-left: 290px;
+    font-size: 20px;
+    opacity: 0.7;
+}
+
+.signin__form .logo-signin {
+    display: flex;
+    margin-left: 270px;
+    margin-bottom: 20px;
+}
+
+.signin__form .logo-signin img {
+    width: 35px;
+    height: 35px;
+    margin-left: 30px;
+}
+
+.signin__form .logo-signin img:hover {
+    opacity: 0.7;
+}
+
+/* SIGN UP */
+
+.signup {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+.signup__form {
+    flex: 1;
+    padding-left: 20px; 
+    padding-top: 50px;
+    margin-right: 80px;   
+}
+
+.signup__form .check-box{
+    display: block;
+    width: 25px;
+    height: 20px;
+    margin-left: 120px;
+    margin-right: 12px;
+    float: left;
+}
+
+.signup__form .terms {
+    font-size: 18px;
+    width: 25px;
+}
+
+.signup__form .btn-sign {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    margin-left: 55px;
+}

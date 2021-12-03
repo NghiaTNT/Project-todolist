@@ -1,0 +1,315 @@
+{% extends 'base/layout.html' %}
+{% load static %}
+
+
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="% static 'style-home.css' %">
+    <title>Document</title>
+</head>
+<body>
+    <header class="main__header">
+        <div class="header__menu" ><i class="fas fa-bars header__icon-menu"></i></div>
+
+        <div class="header__search">
+            <div class="header__search-contain">
+                <i class="fas fa-search header__search-icon"></i>
+                <input type="text" class="header__search-input" placeholder="Search">
+            </div>
+
+            <div class="header__search-filter">
+                <div class="header__search-filter-item">
+                    <span class="header__search-filter-close">x</span>
+                    <span class="header__search-filter-content">Search for task 1</span>
+                </div>
+                <div class="header__search-filter-item">
+                    <span class="header__search-filter-close">x</span>
+                    <span class="header__search-filter-content">Search for project 2</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="header__notification">
+            <a href="#" class="header__icon-bell">
+                <img src="static/notification_icon.png" alt="Thông báo" class="header__icon-bell-img">
+            </a>
+            <div class="header__notify">
+                <div class="header__notify-header">
+                    <h3 class="header__notify-header-item">Notification</h3>
+                    <span class="header__notify-header-mark">Mark as read</span>
+                </div>
+
+                <div class="header__notify-list">
+                    <div class="header__notify-img"></div>
+                    <div class="header__notify-infor">
+                        <span class="header__notify-name">You created Project 1</span>
+                        <div class="header__notify-time">
+                            <span class="header__notify-icon-time"><i class="far fa-clock"></i></span>
+                            <span class="header__notify-time">15 minutes ago</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="header__notify-list">
+                    <div class="header__notify-img"></div>
+                    <div class="header__notify-infor">
+                        <span class="header__notify-name">You created Project 1</span>
+                        <div class="header__notify-time">
+                            <span class="header__notify-icon-time"><i class="far fa-clock"></i></span>
+                            <span class="header__notify-time">15 minutes ago</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header__account">
+            <div class="account__infor">
+                <i class="fas fa-user-circle header__account-avatar"></i>-->
+                {% block user %}
+                <div class="header__account-infor">
+                    <h4 class="header__account-username">{{request.user}}</h4>
+                    <span class="header__account-job">Frontend Developer</span>
+                </div>
+                {% endblock %}
+            <!--</div>-->
+
+            <!--<div class="header__account-settings">
+                <div class="header__account-item">
+                    <a href="" class="header__account-settings-icon"><i class="fas fa-cog"></i></a>
+                    <a href="" class="header__account-settings-name">Settings</a>
+                </div>
+            
+                <div class="header__account-item">
+                    <a href="" class="header__account-settings-icon"><i class="fas fa-sign-out-alt"></i>
+                    <a href="%url 'logout' %" class="header__account-settings-name">Log out</a>
+                </div>
+            </div>-->
+        <!--</div>       
+    </header>-->
+
+
+    <!--<div class="container">
+
+        <div class="nav">
+            <ul class="nav__list">
+                <li id = "home" class="nav__list-item "><a href="#">Home</a></li>
+                <ul></ul>
+                <li id="project" class="nav__list-item project ">
+                    <a href="#">Project</a>
+                    
+                </li>
+                
+                <ul class="project__list">
+                    <li class="project__list-item add_project " >
+                        <span class="add_project-icon">+</span>
+                        <h3 class="add_project-title"><a href="">Add project</a></h3>
+                    </li>-->
+                    {% block project %}
+                    {% for project in projects %}
+                        <li class="project__list-item project__list-item-active-2"><a href="{% url 'tasks-project-list' project.project_id %}">{{project.name}}</a></li>                 
+                    {%endfor %}
+                    {%endblock %}
+
+                <!--</ul>
+
+                <li id="label" class="nav__list-item label"><a href="#">Label</a></li>
+                
+                <ul class="label__list">
+                    <li class="label__list-item add_label" >
+                        <span class="add_label-icon">+</span>
+                        <h3 href="#" class="add_label-title"><a href="#">Add label</a></h3>
+                    </li>-->
+                    {% block label %}
+                    {% for label in labels %}
+                        <li class="label__list-item ">
+                            <div class="sticky">
+                                <img src="static/lable.png" alt="Lable">
+                            </div>
+                            <a href="{% url 'tasks-label-list' label.label_id %}">{{label.name}}</a>
+                        </li>
+                    {% endfor %}
+                    {% endblock %}
+                    <!--<li class="label__list-item  ">
+                        <div class="sticky">
+                            <img src="static/lable_1.png" alt="Lable 1">
+                        </div>
+                        <a href="#">IE104.M12</a>
+                    </li>
+                    <li class="label__list-item ">
+                        <div class="sticky">
+                            <img src="static/lable_2.png" alt="Lable 2">
+                        </div>
+                        <a href="#"> SE104.M11</a>                      
+                    </li>-->
+                <!--</ul>
+            </ul>
+            <div class="nav__support">
+                <h3 class="nav__support-title">Support</h3>
+                <i class="far fa-question-circle nav__support-icon"></i>
+            </div>
+        </div>-->
+
+        {% block content %}
+        <main class="content">
+            <header class="content__header">
+                <div class="content__header-time">{{date}}</div>
+                <div class="content__header-welcome">Welcome, <span class="content__header-welcome-name">{{request.user}}</span></div>
+            </header>
+            <div class="content__container">
+                <header class="container__header">
+                    <h3 class="container__header-title">My priorities</h3>
+                    <nav class="container__header-list">
+                        <ul>
+                            <li>
+                                <button class="tablinks-my-prio active-my-prio" onclick="openMyPrio(event, 'content-upcoming')">All tasks</button>
+                            </li>
+                            <li>
+                                <button class="tablinks-my-prio" onclick="openMyPrio(event, 'overdue-task')">Overdue</button>
+                            </li>
+                            <li>
+                                <button class="tablinks-my-prio" onclick="openMyPrio(event, 'complete-task')">Complete</button>
+                            </li>
+                        </ul>
+                    </nav>
+                </header>
+                <div class="content__container-upcoming">
+                    <div id="content-upcoming" class="content-my-prio content__upcoming">
+                        <!-- Upcoming -->
+                        {% for task in tasks %}
+                            <div class="upcoming-task">
+                                <div class="upcoming-task-avatar"></div>
+                                <div class="upcoming-task-content">
+                                    <div class="upcoming-task-line">
+                                        <div class="upcoming-task-line-half">
+                                            <h3 class="upcoming-task-name"><a href="{% url 'task-update' task.task_id %}" style="text-decoration: none;">{{task.name}}</a></h3>
+                                            {% if task.complete %}
+                                                <i class="fas fa-check-circle upcoming-task-icon-success"></i>
+                                            {% endif %}
+                                            <div class="upcoming-task-name-project">{{task.project}}</div>
+                                        </div>
+                                        <div class="upcoming-member-list">
+                                            <ul class="upcoming-member-avar">
+                                                <i onclick="location.href='{% url 'task-delete' task.task_id %}'" style="cursor: pointer;" class="upcoming-member-avar-img fa fa-trash"></i>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="upcoming-task-line">
+                                        <div class="coming-task-line-time">{{task.due_date}}</div>
+                                        {% if task.label is not None %}
+                                        <div class="upcoming-task-line-label">
+                                            <div class="upcoming-task-line-picture">
+                                                <img  class="upcoming-task-line-img" src="{% static 'lable.png' %}" alt="Lable 1">
+                                            </div>                                        
+                                            <div class="upcoming-task-line-lable-name">{{task.label}}</div>
+                                        </div>
+                                        {% endif %}
+                                    </div>        
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    
+                    
+
+                    <!-- Overdue -->
+                    
+                    <div id="overdue-task" class="content-my-prio overdue-task " >
+                        {% for task in tasks %}
+                            {% if task.due_date < today %}
+                                <div class="upcoming-task" >
+                                    <div class="upcoming-task-avatar"></div>
+                                    <div class="upcoming-task-content">
+                                        <div class="upcoming-task-line">
+                                            <div class="upcoming-task-line-half">
+                                                <h3 class="upcoming-task-name"><a href="{% url 'task-update' task.task_id %}" style="text-decoration: none;">{{task.name}}</a></h3>
+                                                <i class="fas fa-exclamation-circle upcoming-task-icon-overdue"></i>
+                                                <div class="upcoming-task-name-project">{{task.project}}</div>
+                                            </div>
+                                            <div class="upcoming-member-list">
+                                                <ul class="upcoming-member-avar">
+                                                    <i onclick="location.href='{% url 'task-delete' task.task_id %}'" style="cursor: pointer;" class="upcoming-member-avar-img fa fa-trash"></i>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="upcoming-task-line">
+                                            <div class="coming-task-line-time">{{task.due_date}}</div>
+                                            {% if task.label is not None %}
+                                            <div class="upcoming-task-line-label">
+                                                <div class="upcoming-task-line-picture">
+                                                    <img class="upcoming-task-line-img" src="{% static 'lable.png' %}" alt="Lable 1">
+                                                </div>
+                                                <div class="upcoming-task-line-lable-name">{{task.label}}</div>    
+                                            </div>
+                                            
+                                            {%endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            {%endif%}
+                        {%endfor%}
+                    </div>
+                    <!-- Complete-->
+                    
+                    <div id="complete-task" class="content-my-prio complete-task">
+                        {% for task in tasks %}
+                            {% if task.complete %}
+                                <div class="upcoming-task" >
+                                    <div class="upcoming-task-avatar"></div>
+                                    <div class="upcoming-task-content">
+                                        <div class="upcoming-task-line">
+                                            <div class="upcoming-task-line-half">
+                                                <h3 class="upcoming-task-name"><a href="{% url 'task-update' task.task_id %}" style="text-decoration: none;">{{task.name}}</a></h3>
+                                                <i class="fas fa-check-circle upcoming-task-icon-success"></i>
+                                                <div class="upcoming-task-name-project">{{task.project}}</div>
+                                            </div>
+                                            <div class="upcoming-member-list">
+                                                <ul class="upcoming-member-avar">
+                                                    <i onclick="location.href='{% url 'task-delete' task.task_id %}'" style="cursor: pointer;" class="upcoming-member-avar-img fa fa-trash"></i>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="upcoming-task-line">
+                                            <div class="coming-task-line-time">{{task.due_date}}</div>
+                                            {% if task.label is not None %}
+                                            <div class="upcoming-task-line-label">
+                                                <div class="upcoming-task-line-picture">
+                                                    <img class="upcoming-task-line-img" src="static/lable.png" alt="Lable 1">
+                                                </div>                                                
+                                                <div class="upcoming-task-line-lable-name">{{task.label}}</div>
+                                            </div>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+
+
+                </div>
+                <!-- Add task -->
+                <div class="content__add-task">
+                    <div class="content__add-task-icon">
+                        <a href="{% url 'task-create' %}" style="color: white;"><i class="fas fa-plus-square"></i></a>
+                    </div>
+                    <span class="content__add-task-title"><a href="{% url 'task-create' %}" style="text-decoration: none; color: white;">Add task</a></span>
+                </div>
+            </div>
+        </main>
+        {% endblock%}
+        
+        <script src="{% static 'main-home.js' %}"></script>
+    </div>
+
+</body>
+</html>
+

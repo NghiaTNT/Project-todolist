@@ -1,0 +1,69 @@
+{% load crispy_forms_tags %}
+
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Add Project</title>
+    <style>
+
+      .CN_body_container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: rgba(212, 248, 248, 0.733);
+          width: 100%;
+          height: 100vh;
+      }
+      div.CN_container {
+          padding-left: 80px;
+          padding-right: 80px;
+          padding-bottom: 50px;
+          background-color: #fff;
+          border-radius: 2%;
+          width: 60%;
+          min-height: 380px;
+          box-shadow: 0 14px 10px 0 rgba(0, 0, 0, 0.2);
+      }
+
+      h1.CN_title {
+          background-image: linear-gradient(119deg, #ff6c99, #c93cbc 100%);
+          color: #fff;
+          padding: 10px 0;
+          margin-bottom: 50px;
+          margin-top: 30px;
+          font-weight: 700;
+          font-size: 40px;
+      }
+  </style>
+  </head>
+  <body>
+    <div class="CN_body_container">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-8 CN_container">
+          <hr class="mt-0 mb-4">
+            <div style="display: flex;">
+              <span class="col-2"></span>
+              <h1 class="text-center border border-4 rounded col-8 CN_title">PROJECT FORM</h1>
+              <span class="col-2"></span>
+            </div>
+            <form method="post" action="">
+                {% csrf_token %}
+                {{form|crispy}}
+                <div class="vertical-center" style="display: flex;">
+                    <input type="submit" class="btn btn-success col-5" value="SUBMIT" style="align-items:center;">
+                    <span class="col-2"></span>
+                    <input type='button' class='btn btn-warning col-5' value="RETURN HOME" onclick="location.href='{% url 'index' %}'">
+                </div>
+            </form>            
+        </div>
+      </div>
+    </div>
+  </div>
+  </body>
+</html>
+
+

@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,900;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'account.css' %}">
+    <title>Setting account</title>
+</head>
+<body>
+    <main class="main">
+        <nav class="setting__nav">
+            <h2>Settings</h2>
+            <a href="{% url 'setting' %}" class="setting__switch">General</a>
+            <a href="" class="setting__switch nav-btn">Account</a>
+        </nav>
+
+        <div class="account-info">
+
+            <div class="close-setting"><a href="{% url 'index' %}"><i class="fas fa-times icon-close"></i></a></div>
+
+            <div class="avatar-edit">
+                <div class="avatar"><i class="far fa-user avatar-img"></i></div>
+               <img src="{% static 'edit_icon.png' %}" alt="edit-icon" class="edit">
+            </div>
+            
+            <div class="setting-info">
+ 
+                <div class="setting__form-group">
+                    <label for="fullname" class="form-label">Fullname</label>
+                    <input id="fullname" name="fullname" type="text" value="{{request.user}}" class="form-control">
+                    <span class="form-message"></span>
+                </div>
+                
+                <div class="setting__form-group">
+                    <label for="occupation" class="form-label">Occupation</label>
+                    <input id="occupation" name="fullname" disabled type="text" placeholder="Frontend Developer" class="form-control">
+                    <span class="form-message"></span>
+                </div>
+                
+                <div class="setting__form-group">
+                    <label for="password" class="form-label">Password</label>
+                    <input id="password" name="password" disabled type="password" placeholder="......" class="form-control">
+                    <span class="form-message"></span>
+                </div>
+                
+                <a href="#" class="setting__change-password">Change password</a>
+                
+                <div class="setting__form-group">
+                    <label for="email" class="form-label">Email</label>
+                    <input id="email" name="email" type="email" disabled placeholder="19520334@gm.uit.edu.vn" class="form-control">
+                    <span class="form-message"></span>
+                </div>
+                
+                <div class="setting__form-group">
+                    <label for="phone" class="form-label">Phone</label>
+                    <input id="phone" name="phone" type="phone" disabled placeholder="0388030248" class="form-control">
+                    <span class="form-message"></span>
+                </div>
+            </div> 
+            <button class="btn-save"><a href="{% url 'index' %}" style="color: white; text-decoration: none;">Save</a></button>
+        </div>
+        </main>
+    </body>
+    </html>

@@ -1,0 +1,63 @@
+{% load static %}
+{% load crispy_forms_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,900;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'sign-up.css' %}">
+    <title>Sign-up</title>
+</head>
+<body>
+    
+    <!-- BEGIN SIGN UP -->
+    <div class="signup">
+        <div class="introduce">
+            <h2 class="title">Get more done with Nexus</h2>
+            <p class="description">Vestibulum interdum vehicula enim, eu pulvinar ipsum imperdiet quis. Nulla sed eleifend nibh.</p>
+        </div>
+
+        <form class="signup__form" id="form-2" method="post">
+            <h2 class="title-form">SIGN UP</h2>
+            <span class="sub-title-form">Be a part of our community</span>
+            {% csrf_token %}
+            <div class="form-group">
+                <label id="name-2"> Username </label>
+                <li class="form-control">{{form.username}}</li>
+            </div>
+
+            <div class="form-group">
+                <!--<input id="password-2" name="password" type="password" placeholder="Password" class="form-control">-->
+                <label>Password</label>
+                <li class="form-control">{{form.password1}}</li>
+            </div>
+
+            <div class="form-group">
+                <!--<input id="password_confirmation-2" name="password_confirmation" type="password" placeholder="Confirm password" class="form-control">-->
+                <label>Confirm password</label>
+                <li class="form-control">{{form.password2}}</li>
+            </div>
+
+            <!--<div class="form-group">
+                <input id="email" name="email" type="email" placeholder="Email" class="form-control">
+            </div>-->
+
+            <input type="checkbox" checked required class="check-box">
+            <span class="terms"> I accept the terms of agreements</span>
+            <button class="btn-sign" type="submit">Sign up</button>
+            <div class="sign-footer">
+                <span>Already have an account?</span>
+                <a href="{% url 'login' %}">Sign in</a>
+            </div>   
+        </form>
+        </div>
+    </div>
+
+    <!-- END SIGN UP -->
+</body>
+</html>

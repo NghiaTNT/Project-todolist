@@ -1,0 +1,153 @@
+/* Reset CSS */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    font-size: 62.5%;
+    /* 1rem = 10px */
+    padding: 0;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.main {
+    display: flex;
+}
+
+.setting__general {
+    flex: 1;
+    box-shadow: 0 0 30px -3px rgba(0, 0, 0, 0.2);
+    height: 100vh;
+    box-sizing: border-box;
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+
+.setting__general h2 {
+    font-size: 42px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin-top: 80px;
+    margin-bottom: 60px;
+}
+
+.setting__general .setting__switch {
+    border: none;
+    font-size: 30px;
+    background-color: #fff;
+    text-decoration: none;
+    margin-bottom: 30px;
+    padding-left: 18px; 
+    color: #000;
+}
+
+.setting__general .nav-btn-1 {
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+    width: 200px;
+    border: none;
+    height: 42px;
+    border-radius: 44.1px;
+    background-image: linear-gradient(76deg, #ff6c99 5%, rgba(201, 60, 188, 0.85) 96%);
+    font-size: 30px;
+    text-align: left;
+    color: #fff;
+}
+
+.general-info .close-setting {
+    border-radius: 6px;
+    background-image: linear-gradient(to bottom, #ff6c99, rgba(201, 60, 188, 0.85));
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.general-info .icon-close {
+    font-size: 30px;
+    color: #fff;
+    padding-top: 6px;
+}
+
+/* general-info */
+
+.general-info {
+    flex: 4;
+}
+
+.container__infor {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 2.5rem;
+    margin-top: 120px;
+}
+
+.container__infor-line {
+    align-self: center;
+    align-content: center;
+    margin-bottom: 3rem;
+}
+
+.container__infor-label {
+    display: inline-block;
+    width: 25rem;
+}
+
+.container__infor-option {
+    position: relative;
+    margin-right: 2px;
+}
+
+.container__infor-option::before {
+    text-align: center;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    right: 0px;
+    width: 3rem;
+    height: 3rem;
+    font-size: 1rem;
+    pointer-events: none;
+    background-image: linear-gradient(to bottom, #ff6c99, rgba(201, 60, 188, 1));
+    content: "\25BC";
+    bottom: 0px;
+    padding-bottom: 1px;
+    border-radius: 5px;
+    margin: 4px 3px;
+    z-index: 0;
+}
+
+.container__infor-option .child__options {
+    font-size: 1.4rem;
+    border-radius: 7px;
+    padding: 10px 5px;
+    width: 15rem;
+    border: solid 2.8px #000;  
+}
+
+.container__infor-option input[type="date"] {
+    padding: 5.2px;
+    height: 3.5rem;
+}
+
+.container__infor-option input[type="time"] {
+    padding: 5px;
+    height: 3.4rem;
+}
+
+
+
+
+
+
+

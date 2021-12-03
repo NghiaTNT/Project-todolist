@@ -1,0 +1,81 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,900;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'fontawesome-free-5.15.4-web/fontawesome-free-5.15.4-web/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'settings.css' %}">
+    <title>Setting-general</title>
+</head>
+<body>
+    <main class="main">
+        <nav class="setting__general">
+            <h2>Settings</h2>
+            <a href="" class="setting__switch nav-btn-1">General</a>
+            <a href="{% url 'account' %}" class="setting__switch ">Account</a>
+        </nav>
+
+        <div class="general-info">
+            <a href="{% url 'index' %}"><div class="close-setting"><i class="fas fa-times icon-close"></i></div></a>
+
+            <div class="container__infor">
+                <div class="container__infor-line">
+                    <label class="container__infor-label">Language</label>
+                    <span class="container__infor-option">
+                        <select name="age-to" class="child__options">
+                            <option value="1">English</option>
+                            <option value="2">Vietnamese</option>
+                            <option value="3">Japanese</option>
+                            <option value="4">Korean</option>
+                        </select>
+                    </span>
+                </div>
+
+                <div class="container__infor-line">
+                    <label class="container__infor-label">Time format</label>
+                    <span class="container__infor-option">
+                        <input type="time" name="age-to" class="child__options">
+                    </span>
+                </div>
+
+                <div class="container__infor-line">
+                    <label class="container__infor-label">Date format</label>
+                    <span class="container__infor-option">
+                        <select type="option" name="age-to" class="child__options">
+                            <option value="1">Day, MM dd yyyy</option>
+                        </select>
+                    </span>
+                </div>
+
+                <div class="container__infor-line">
+                    <label class="container__infor-label">Theme</label>
+                    <span class="container__infor-option">
+                        <select name="age-to" class="child__options">
+                            <option value="1">Light</option>
+                            <option value="2">Dark</option>
+                        </select>
+                    </span>
+                </div>
+
+                <div class="container__infor-line">
+                    <label class="container__infor-label">Notification</label>
+                    <span class="container__infor-option">
+                        <select name="age-to" class="child__options">
+                            <option value="1">On</option>
+                            <option value="2">Off</option>
+                        </select>
+                    </span>
+                </div>
+               
+            </div>
+        </div>
+    </main>
+</body>
+</html>

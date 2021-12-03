@@ -1,0 +1,84 @@
+.support__infor {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+
+.support__title {
+    font-size: 30px;
+    font-weight: 900;
+    margin-top: 60px;
+}
+
+.support_email {
+    align-self: center;
+    display: block;
+    width: 500px;
+    margin-bottom: 15px;
+    font-size: 15px;
+    height: 35px;
+    border-radius: 5px;
+    box-shadow: inset 0 0 2px 0 rgba(0, 0, 0, 0.35);
+    background-color: rgba(229, 229, 229, 0.4);
+    border: none;
+    outline: none;
+    padding-left: 10px;
+    opacity: 0.6;
+    
+}
+
+.support__problem {
+    align-self: center;
+    display: block;
+    width: 500px;
+    margin-bottom: 22px;
+    font-size: 15px;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    resize: none;
+    box-shadow: inset 0 0 2px 0 rgba(0, 0, 0, 0.35);
+    background-color: rgba(229, 229, 229, 0.4);
+    padding-left: 10px;
+    opacity: 0.6;
+}
+
+.support__btn-send {
+    border: none;
+    border-radius: 4px;
+    background-image: linear-gradient(to right, rgba(201, 60, 188, 0.85) 0%, #ff6c99 100%);
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    width: 110px;
+    height: 35px;
+    transition: all 0.2s linear;
+    align-self: center;
+}
+
+.support__btn-send:hover {
+    cursor: pointer;
+    opacity: 0.7;
+    transform: scale(1.1);
+}
+
+.support__title--margin {
+    margin-bottom: 10px;
+}
+
+.support__description {
+    font-size: 18px;
+    opacity: 0.8;
+    margin: 0 0 15px 0;
+}
+
+.support__video {
+    align-self: center;
+}
+
+/* Reset CSS */
+* {
+    box-sizing: border-box;
+}
