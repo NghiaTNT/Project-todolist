@@ -115,6 +115,13 @@ class LabelDelete(LoginRequiredMixin, DeleteView):
     template_name = 'base/label-delete.html'
     success_url = reverse_lazy('index')
 
+class LabelUpdate(LoginRequiredMixin, UpdateView):
+    model = Label
+    fields = ('name')
+    template_name = 'base/add-label.html'
+    success_url = reverse_lazy('index')
+
+
 """
 Display page home
 """

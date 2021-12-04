@@ -84,7 +84,7 @@
                     <div style="display: flex">
                         <button class="btn col-3" onclick="location.href='{% url 'index' %}'"><i class="fa fa-backward"></i>
                             RETURN</button>
-                        <h1 class="text-center border rounded CN_title col-6" onclick="location.href='{% url 'project-update' project.project_id %}'">{{project.name}}</h1>
+                        <h1 class="text-center border rounded CN_title col-6" style="cursor: pointer;" onclick="location.href='{% url 'project-update' project.project_id %}'">{{project.name}}</h1>
                         <button class="btn col-3" onclick="location.href='{% url 'project-delete' project.project_id %}'"><i
                                 class="fa fa-trash"></i> DELETE</button>
                     </div>

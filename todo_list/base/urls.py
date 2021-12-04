@@ -1,7 +1,7 @@
 from django.contrib.auth import views
 from django.contrib.auth.views import LogoutView
 from django.urls import path
-from .views import IndexView, RegisterPage, TaskDetail, CreateTask, TaskUpdate, TaskDelete, CustomLoginView, TaskList, ProjectList, task_label, tasks, settings, support,account, CreateProject, CreateLabel, ProjectDelete, LabelDelete, ProjectUpdate
+from .views import IndexView, RegisterPage, TaskDetail, CreateTask, TaskUpdate, TaskDelete, CustomLoginView, TaskList, ProjectList, task_label, tasks, settings, support,account, CreateProject, CreateLabel, ProjectDelete, LabelDelete, ProjectUpdate, LabelUpdate
 
 
 urlpatterns = [
@@ -21,5 +21,7 @@ urlpatterns = [
     path('project-delete/<int:pk>', ProjectDelete.as_view(), name='project-delete'),
     path('label/<int:label_id>/', task_label, name='tasks-label-list'),
     path('label-delete/<int:pk>', LabelDelete.as_view(), name='label-delete'),
+    path('project-update/<int:pk>/', ProjectUpdate.as_view(), name="project-update"),
+    path('label-update/<int:pk>/', LabelUpdate.as_view(), name="label-update"),
     path('project-update/<int:pk>/', ProjectUpdate.as_view(), name="project-update"),
 ]
